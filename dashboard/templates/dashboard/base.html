@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Student-Dashboard</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css">
+
+  <link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.js"></script> 
+  
+
+</head>
+
+<body onload="loadingFunc()">
+
+  <div id="preloader"></div>
+  {% include 'dashboard/message.html' %}
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark mb-1">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">EduTekBiz</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Features
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'books' %}">Books</a>
+                <a class="dropdown-item" href="{% url 'translate' %}">Translate</a>
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" href="{% url 'dictionary' %}">Dictionary</a>
+                <a class="dropdown-item" href="{% url 'wiki' %}">Wikipedia</a>
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" href="{% url 'homework' %}">Homework</a>
+                <a class="dropdown-item" href="{% url 'youtube' %}">Youtube</a>
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" href="{% url 'notes' %}">Notes</a>
+                <a class="dropdown-item" href="{% url 'todo' %}">To-do</a>
+              </div>
+              
+            </li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'account_change_password' %}">Change Password</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    {% block main-content %}
+    {% endblock main-content %}
+  
+  <footer>
+    <div class="footer-wrapper">
+      <div class="top-img"></div>
+      <div class="container-fluid">
+      
+        <div class="footer-mid-part">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="footer-section-one">
+                  <div class="footer-heading"><h2>Contact Us</h2></div>
+                  <div class="footer-contact-box">
+                  <div class="footer-contact-icon"><i class="fa fa-map-marker-alt"></i></div>
+                  <div class="footer-contact-text">
+                    <p>Address: <br> Sabarmati, Ahmedabad</p>
+                  </div>
+                  <div class="clr"></div>
+                </div>
+
+                <div class="footer-contact-box">
+                  <div class="footer-contact-icon"><i class="fa fa-envelope"></i></div>
+                  <div class="footer-contact-text">
+                    <p><a href="mailto:2001vedant@gmail.com">2001vedant@gmail.com</a></p>
+                    <p><a href="mailto:anujdarji2001@gmail.com">anujdarji2001@gmail.com</a></p>
+                  </div>
+                  <div class="clr"></div>
+                </div>
+      
+                <div class="footer-contact-box">
+                  <div class="footer-contact-icon"><i class="fa fa-phone"></i></div>
+                  <div class="footer-contact-text">
+                    <p><a href="tel:+91 9313263557">+91 9313263557</a></p>
+                    <p><a href="tel:+91 9601581001">+91 9601581001</a></p>
+                  </div>
+                  <div class="clr"></div>
+                </div>
+    
+    
+              </div>
+    
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="footer-section-two">
+                <div class="footer-heading"><h2>Quick Link</h2></div>
+                <div class="footer-link">
+                  <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                     <li><a href="{% url 'notes' %}">Notes</a></li>
+                      <li><a href="{% url 'homework' %}">Homework</a></li>
+                       <li><a href="{% url 'todo' %}">Todo</a></li>
+                        <li><a href="{% url 'books' %}">Books</a></li>
+                         <li><a href="{% url 'dictionary' %}">Dictionary</a></li>
+                          <li><a href="{% url 'wiki' %}">Wikipedia</a></li>
+                           <li><a href="{% url 'youtube' %}">Youtube</a></li>
+                           <li><a href="{% url 'translate' %}">Translate</a></li>
+                           
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="footer-section-two">
+                <div class="footer-heading"><h2>Policy</h2></div>
+                 <div class="footer-link">
+                  <ul>
+                    <li><a href="#"></a></li>
+                     <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">T&C</a></li>
+                       <li><a href="#">FAQ</a></li>   
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="footer-section-three">
+                <div class="footer-heading"><h2>Get in touch</h2></div>
+                 <div class="footer-form">
+                   <form method="POST" action="/contact/">
+                    {% csrf_token %}
+                     <div class="footer-form-box">
+                       <input type="text" class="footer-form-style" placeholder="Name" name="name" required>
+                     </div>
+                     <div class="footer-form-box">
+                       <input type="email" class="footer-form-style" placeholder="Email" name="email" required>
+                     </div>
+                     <div class="footer-form-box">
+                       <input type="tel" class="footer-form-style" placeholder="Phone Number" pattern="^\d{10}$" name="contact" required>
+                     </div>
+                     <div class="footer-form-box">
+                      <textarea class="footer-form-style" placeholder="Any Query / Feedback" name="feedback" required></textarea>
+                    </div>
+                     <div class="footer-form-box">
+                       <input type="submit" class="btn btn-outline-light" value="Submit">
+                     </div>
+                   </form>
+                 </div>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+     <div class="footer-bottom">
+       <div class="row mt-5">
+         <div class="col-lg-12 col-md-12 col-sm-12">
+          <p> &copy; Self-Made Mini-Project <br>
+            <span class="text-white"> Anuj Darji & Vedant Modi </span></p>
+         </div>
+       </div>
+     </div>
+    
+    
+      </div>
+    </div>
+    
+  </footer>
+  
+
+<script>
+  var preloader = document.getElementById('preloader');
+
+function loadingFunc(){
+    preloader.style.display = 'none';
+}
+
+
+</script>
+
+</body>
+</html>

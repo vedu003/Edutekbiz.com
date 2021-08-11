@@ -1,0 +1,763 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f8f8;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+}
+
+#preloader {
+  width: 100%;
+  position: fixed;
+  height: 100vh;
+  background: #fff  url('../images/ezgif1.gif') no-repeat center;
+  z-index: 9999;
+}
+
+.navbar {
+    background-image: url(../images/woodennotes.jpg);
+}
+
+.navbar-brand{
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Caveat', cursive;
+}
+
+.nav-item a {
+  color: #f8f8f8!important;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-item a::before{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 1px;
+  border-bottom: 3px solid #fff;
+  transition: all 0.4s linear;
+}
+
+.nav-item a:hover::before {
+  width: 100%; 
+}
+
+.dropdown-menu .dropdown-item{
+  color: #000!important;
+}
+
+a {
+    text-decoration: none !important;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.homecont{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+}
+
+.card{
+  position:relative;
+  margin:20px 15px;
+  width:240px;
+  height:330px;
+  background: #fff;
+  transition:1s;
+  box-shadow:inset 100px 0 50px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 10px rgb(78, 77, 77);
+}
+
+.card:hover{
+  z-index:1111;
+  transform:perspective(2000px) rotate(-10deg);
+  box-shadow:inset 20px 0 50px rgba(0,0,0,0.5);
+}
+
+.card .img-container{
+  position:relative;
+  width:100%;
+  height:100%;
+  box-sizing:border-box;
+  transform-origin:left;
+  z-index:1;
+  transition:1s;
+}
+
+.card .img-container img{
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  object-fit:cover;
+  overflow: hidden;
+}
+
+.card:hover .img-container{
+  transform:rotateY(-135deg);
+}
+
+.card .card-details{
+  position:absolute;
+  left:0;
+  top:0;
+  box-sizing:border-box;
+  padding:20px;
+  color:#000;
+}
+
+.card .card-details p{
+  margin:0;
+  padding:0;
+  line-height:25px;
+  font-size:0.9rem;
+  text-align: justify;
+}
+
+.homesec{
+  background: #f8f8f8;
+}
+
+.custom-header .fa-volume-up{
+  cursor: pointer;
+}
+
+
+
+/* *************** login ***************** */
+
+img {
+  max-width: 100%;
+}
+
+.wrapper{
+  width: 60%;
+}
+
+.workinghny-form-grid{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.w3l-workinghny-form h1 {
+  font-size: 3rem;
+  line-height: 1.1em;
+  font-weight: 600;
+  color: #622301;
+}
+
+/* .w3l-workinghny-form .workinghny-block-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-gap: 70px;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+} */
+
+.workinghny-form-grid .main_left, .workinghny-left-img{
+  display: flex;
+  justify-content: center!important;
+  align-items: center;
+}
+
+.w3l-workinghny-form .login-form-content {
+  padding: 2em 0em;
+}
+
+.w3l-workinghny-form input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #212529;
+  color: #000;
+  background:transparent;
+  font-size: 18px;
+  line-height: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 0;
+  outline: none;
+}
+
+
+
+.w3l-workinghny-form .btn-style {
+  font-size: 18px;
+  color: #fff;
+  width: 100%;
+  background: #622301;
+  border: none;
+  height: 55px;
+  font-weight: 700;
+  border-radius: 6px;
+  transition: .3s ease;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  -ms-transition: .3s ease;
+  -o-transition: .3s ease;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+.btn-style {
+  font-size: 18px;
+  color: #fff;
+  width: 20%;
+  background: #622301;
+  border: none;
+  height: 45px;
+  font-weight: 700;
+  border-radius: 6px;
+  transition: .3s ease;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  -ms-transition: .3s ease;
+  -o-transition: .3s ease;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+.btn-style1 {
+  font-size: 18px;
+  color: #fff;
+  width: 10%;
+  background: #622301;
+  border: none;
+  height: 40px;
+  font-weight: 700;
+  border-radius: 6px;
+  transition: .3s ease;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  -ms-transition: .3s ease;
+  -o-transition: .3s ease;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+.btn-style2 {
+  font-size: 18px;
+  color: #fff;
+  width: 15%;
+  background: #622301;
+  border: none;
+  height: 40px;
+  font-weight: 700;
+  border-radius: 6px;
+  transition: .3s ease;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  -ms-transition: .3s ease;
+  -o-transition: .3s ease;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+.btn-style:hover,.btn-style1:hover,.btn-style2:hover {
+  color: #fff;
+  box-shadow: 0 6px 6px -4px #000;
+}
+
+.w3l-workinghny-form .btn-style:hover {
+  box-shadow: 0 6px 6px -4px #000;
+}
+
+.w3l-workinghny-form p.already,
+.w3l-workinghny-form p.already a {
+  font-size: 18px;
+  line-height: 25px;
+  color: #495057;
+  margin: 25px 0 0;
+  text-align: center;
+}
+
+.w3l-workinghny-form p.already a {
+  color: #495057;
+  font-weight: 700;
+}
+
+
+
+  /* ************* Notes **************** */
+.notescont{
+  background-image: url(../images/woodennotes.jpg);
+}
+  
+.notedesc {
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+}
+
+.notestitle{
+  font-family: 'Kaushan Script', cursive;
+}
+
+.notesulist,.noteslist{
+  list-style:none;
+}
+
+.notesulist{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.notesulist .noteslist .noteanchor{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:15rem;
+  width:15rem;
+  padding:1rem;
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  transform: rotate(-6deg);
+  transition: transform .15s linear;
+}
+
+.notesulist .noteslist:nth-child(even) .noteanchor{
+  transform:rotate(4deg);
+  position:relative;
+  top:5px;
+  background:#cfc;
+}
+.notesulist .noteslist:nth-child(3n) .noteanchor{
+  transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:#ccf;
+}
+.notesulist .noteslist:nth-child(5n) .noteanchor{
+  transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+}
+
+.notesulist .noteslist .noteanchor:hover,.notesulist .noteslist .noteanchor:focus{
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  transform: scale(1.25);
+  position:relative;
+  z-index:1;
+}
+
+.notesulist .noteslist{
+  margin:1em;
+}
+
+.notesulist .noteslist .noteanchor{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} 
+
+
+/* *************Todo************** */
+
+.todocont{
+  background-image: url(../images/woodennotes.jpg);
+}
+
+tr {
+  transition: all .2s ease-in;
+  cursor: pointer;
+}
+
+tr:hover {
+  /* background-color: #f5f5f5; */
+  transform: scale(1.02);
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ****************profile************ */
+
+.profiletable, .profiletable th, .profiletable td{
+  border: 1px solid black!important;
+  border-collapse: collapse;
+}
+
+.profiletable tr:hover {
+  transform: scale(1.0);
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* **************Footer************* */
+
+footer{
+  margin-top: auto;
+}
+
+.footer-wrapper{
+  width: 100%;
+  height: auto;
+  min-height: 350px;
+  background-image: url(../images/woodennotes.jpg);
+  overflow: hidden;
+  position: relative;
+  padding-top: 50px;
+}
+
+.footer-mid-part{
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.footer-section-one{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 20px 20px;
+  /* background: rgba(255,255,255,.1); */
+}
+.footer-section-two{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 20px 20px;
+}
+.footer-section-three{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 20px 20px;
+  background: rgba(255,255,255,.1);
+}
+.footer-heading{
+   width: 100%;
+  height: auto;
+  margin: auto;
+}
+.footer-heading h2{
+  font-family: 'Caveat', cursive;
+  font-weight: bold;
+  font-size: 1.7rem;
+  text-align: left;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0px;
+}
+.footer-contact-box{
+  width: 100%;
+  height: auto;;
+  margin: auto;
+  margin-top: 13px;
+}
+.footer-contact-icon{
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin-top: 1.2rem;
+  text-align: center;
+}
+.footer-contact-icon i{
+  color: #fff;
+  font-size: 20px;
+}
+.footer-contact-text{
+  width: 85%;
+  height: auto;
+  float: left;
+  margin-left: 10px;
+  margin-top: 1rem;
+}
+.footer-contact-text p{
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+.footer-contact-text p a{
+  font-size: 16px;
+  text-align: left;
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.footer-link{
+  width: 100%;
+  height:auto;
+  margin: auto;
+  margin-top: 20px;
+}
+.footer-link ul{
+  margin:0px;
+  padding: 0px;
+}
+.footer-link ul li{
+  list-style-type: none;
+  text-align: center;
+  padding-top: 5px;
+}
+.footer-link ul li a{
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;;
+}
+
+.footer-section-one .footer-heading h2, .footer-section-two .footer-heading h2{
+  text-align: center;
+}
+.footer-form{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-top: 20px;
+}
+.footer-form-box{
+   width: 100%;
+  height: auto;
+  margin: auto;
+  margin-top: 20px;
+}
+.footer-form-style{
+  width: 100%;
+  height: 40px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  background:transparent;
+  font-size: 14px;
+  text-align: left;
+  padding: 0px 10px;
+  color: #fff;
+}
+
+.footer-form-style::placeholder{
+  color: #f8f8f8;
+}
+
+.footer-bottom{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.footer-bottom{
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+}
+
+.top-img{
+  position: absolute;
+  background: url(../images/top-divder.png);
+  top: -20px;
+  left: 0px;
+  width: 100%;
+  height: 55px;
+}
+
+
+h1{
+  font-size: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 30px;
+}
+
+.card2 {
+  box-shadow: 15px 15px 10px rgb(78, 77, 77);
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  background: #eeecec;
+  margin-bottom: 3rem;
+}
+
+.card2:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+  transition: 0.5s ease;
+}
+
+.card2 h4 {
+  margin: 40px 40px 0 40px;
+  text-align: left;
+}
+
+.card2 h6 {
+  margin: 25px 40px 0 40px;
+  text-align: justify;
+}
+
+.card2 p {
+  text-align: justify;
+  margin-right: 50px;
+  line-height: 10px;
+}
+
+.card2 img {
+  height: 210px;
+}
+
+.card-header2 {
+  color: black !important;
+  transition: 0.3s ease-in;
+}
+
+.card-header2:hover {
+  transition: 0.1s ease-in;
+}
+
+.card-img-top:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+  transition: 0.2s ease;
+}
+
+
+
+
+
+/*******-- responsive design --***********/
+
+
+@media (max-width: 992px) {
+  .w3l-workinghny-form .workinghny-block-grid {
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+      width: 100%;
+  }
+  .w3l-workinghny-form .login-form-content {
+      padding: 0em 0em 2em 0;
+  }
+
+
+  .workinghny-left-img {
+      order: 2;
+  }
+
+  .w3l-workinghny-form .logo a.brand-logo {
+      font-size: 40px;
+      margin-bottom: 10px;
+  }
+
+  .w3l-workinghny-form {
+      height: auto;
+  }
+}
+
+@media (max-width: 667px) {
+  .w3l-workinghny-form .align-end {
+      padding: 0em;
+  }
+}
+
+@media (max-width: 480px) {
+  .w3l-workinghny-form .logo a.brand-logo {
+      font-size: 35px;
+  }
+
+  .w3l-workinghny-form h2 {
+      font-size: 22px;
+  }
+}
+
+@media (max-width: 415px) {
+  .w3l-workinghny-form .copyright {
+      margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 1199px){
+  .footer-wrapper{
+    position: relative;
+    background-attachment: scroll;
+  }
+  h1{
+    font-size: 4vw!important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .footer-section-one{
+    padding: 12px;
+  }
+  .footer-social-icons ul li{
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width:768px){
+
+  .nav-item a:hover::before {
+    width: 0%; 
+  }
+  
+  
+  .btn-style ,.btn-style1{
+    width: 35%;
+  }
+
+  .btn-style2{
+    width: 45%;
+  }
+
+  .w3l-workinghny-form .workinghny-form-grid .wrapper .logo h1{
+    font-size: 1.5rem!important;
+    margin-bottom: 1rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.sorrytext{
+  font-size: 1rem;
+}
+.wikilink{
+  display: block;
+  overflow-wrap: break-word;
+  margin-top: 1rem;
+}
+
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px)  {
+
+  .w3l-workinghny-form .workinghny-form-grid .wrapper .logo h1{
+    font-size: 2rem!important;
+    margin-bottom: 1rem;
+  }
+
+  .todotable{
+    display: inline-table;
+  }
+
+  .btn-style {
+    width: 28%;
+  }
+  .btn-style1{
+    width: 20%;
+  }
+
+  .btn-style2{
+    width: 30%;
+  }
+
+}

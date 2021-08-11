@@ -1,0 +1,58 @@
+{% extends 'dashboard/base.html' %} 
+{% load static %} 
+{% block main-content %}
+
+<section class='text-center container mt-5'>
+    <h2>Search books and browse your favorite</h2>
+    <form action="" method="post">
+    {% csrf_token %}
+    {{form}}
+        <input type="submit" class="btn btn-style1" value="Submit">
+    </form><br>
+
+{% for book in results %}
+    <a href="{{book.preview}}" target="_blank">
+        <div class="card2">
+            <div class="card-header2">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="img-fluid" src="{{book.thumbnail}}" alt="">
+
+                    </div>
+                    <div class="col-md-9">
+                        <h3 class="p-0 m-0">{{book.title}}</h3>
+                        <b>
+                            <u>
+                                <h5 class="p-0 m-0">{{book.subtitle}}</h5>
+                            </u>
+                        </b>
+                        {% if book.description %}
+
+                            <h6 class="p-0 m-1">{{book.description}}</h6>
+                        {% endif %}
+
+                        <b> 
+                        {% if book.categories %}
+                            <h6 class="ml-0 mt-3">Category:
+                            {% for category in book.categories %}
+                                {{category}}
+                            {% endfor %}
+                            </h6>
+                        {% endif %}
+                            {% if book.count %}
+                                <h6 class="ml-0 mt-1">Pages: {{book.count}}</h6>
+                            {% endif %}
+                            {% if book.rating %}
+                                <h6 class="ml-0 mt-1">Rating: {{book.rating}}</h6>
+                            {% endif %}
+                        </b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+    <br>
+</section>
+
+{% endblock main-content %}

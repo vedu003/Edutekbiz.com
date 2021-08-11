@@ -1,0 +1,100 @@
+{% extends 'dashboard/base.html' %} {% load static %}
+{% load crispy_forms_tags%}
+{% block main-content %}
+<section class="text-center">
+    <div class="container mt-5">
+    {% if not todo_done %}
+        <h2>Due ToDos</h2>
+        <table class="table table-striped table-bordered profiletable todotable">
+            <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for todo in todo %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{todo.title}}</td>
+                    <td>
+                        <a href="{% url 'updatetodo' todo.id %}">
+                            <div class="form-check">
+
+                                {% if t.is_finish == True %}
+                                    <input class="form-check-input" type="checkbox" value="" checked>
+                                {% else %}
+                                    <input class="form-check-input" type="checkbox" value="">
+                                {% endif %}
+
+                                <span class="">Mark as Completed</span>
+                            </div>
+                        </a>
+                    </td>
+
+                    <td><a href="{% url 'deletetodo' todo.id %}"><i class="fa fa-trash"></i></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h3>All To dos are completed!!!!</h3>
+    {% endif %}
+
+        <a href="{% url 'todo' %}" class="btn btn-style1 mb-3">To Do</a>
+        <br><br>
+        {% if not homework_done %} 
+        <h2>Due Homeworks</h2>
+        <table class="table table-striped table-bordered profiletable">
+            <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Due</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for hw in homework %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{hw.subject}}</td>
+                    <td>{{hw.title}}</td>
+                    <td>{{hw.description}}</td>
+                    <td>{{hw.due}}</td>
+
+                    <td>
+                        <a href="{% url 'updatehomework' hw.id %}">
+
+                            <div class="form-check">
+
+                                {% if hw.is_finish == True %}
+                                    <input class="form-check-input" type="checkbox" value="" checked>
+                                {% else %}
+                                    <input class="form-check-input" type="checkbox" value="">
+                                {% endif %}
+
+                                <span class="">Mark as Completed</span>
+
+                            </div>
+
+                        </a>
+                    </td>
+                    <td><a href="{% url 'deletehomework' hw.id %}"><i class="fa fa-trash"></i></a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <h3>All To homeworks are completed!!!!</h3>
+        {% endif %}
+        <a href="{% url 'homework' %}" class="btn btn-style2 mb-5">Homeworks</a>
+    </div>
+</section>
+
+{% endblock main-content %}

@@ -1,0 +1,113 @@
+{% extends 'dashboard/base.html' %} 
+{% load static %} 
+{% block main-content %}
+
+<section class="text-center py-3 homesec">
+  <div class="container">
+  <h3>Welcome {{request.user.username|capfirst}}</h3>
+  <hr> 
+  <div class="container homecont">
+
+    <a href="{% url 'notes' %}">
+      <div class="card">
+        <div class="img-container">
+          <img src="{% static 'dashboard/images/notes.jpg' %}" alt="Notes image">
+        </div>
+        <div class="card-details">
+          <h5>Notes</h5>
+          <p>Create Notes to refer them later. They are stored permanently until deleted</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="{% url 'homework' %}">
+      <div class="card">
+        <div class="img-container">
+          <img src="{% static 'dashboard/images/homework4.jpg' %}" alt="Notes image">
+        </div>
+        <div class="card-details">
+          <h5>Homework</h5>
+          <p>Add homeworks and assign them deadlines. They will be displayed prioritised by deadlines.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="{% url 'todo' %}">
+      <div class="card">
+        <div class="img-container">
+          <img src="{% static 'dashboard/images/todo.jpg' %}" alt="Notes image">
+        </div>
+        <div class="card-details">
+          <h5>To do</h5>
+          <p>Add your to-do lists for your day and remove them as you finish</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="{% url 'books' %}">
+      <div class="card">
+        <div class="img-container">
+          <img src="{% static 'dashboard/images/book1.jpg' %}" alt="Notes image">
+        </div>
+        <div class="card-details">
+          <h5>Books</h5>
+          <p>Browse books from a list of neatly organised book menu</p>
+        </div>
+      </div>
+    </a>
+
+    
+    <a href="{% url 'dictionary' %}">
+        <div class="card">
+          <div class="img-container">
+            <img src="{% static 'dashboard/images/dic2.jpg' %}" alt="Notes image">
+          </div>
+          <div class="card-details">
+            <h5>Dictionary</h5>
+            <p>A vocabulary from a book is troubling you? No problem, enter the word, and the meaning will be displayed almost instantaneously.</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="{% url 'wiki' %}">
+        <div class="card">
+          <div class="img-container">
+            <img src="{% static 'dashboard/images/wiki2.jpg' %}" alt="Notes image">
+          </div>
+          <div class="card-details">
+            <h5>Wikipedia</h5>
+            <p>Homework and Assignments? Search wikipedia to get fast results</p>
+          </div>
+        </div>
+      </a>
+      
+    <a href="{% url 'youtube' %}">
+      <div class="card">
+        <div class="img-container">
+          <img src="{% static 'dashboard/images/yt.jpg' %}" alt="Notes image">
+        </div>
+        <div class="card-details">
+          <h5>Youtube</h5>
+          <p>Search Youtube and select your desired video to play it on youtube.</p>
+        </div>
+      </div>
+    </a>
+
+
+    <a href="{% url 'translate' %}">
+      <div class="card">
+        <div class="img-container">
+          <img src="{% static 'dashboard/images/translator2.jpg' %}" alt="Notes image">
+        </div>
+        <div class="card-details">
+          <h5>Translator</h5>
+          <p>Check out the Translator, that helps you to Translate in your desire language.</p>
+        </div>
+      </div>
+    </a>
+
+
+</div>
+</div>
+</section>
+{% endblock main-content %}

@@ -1,0 +1,51 @@
+{% extends 'dashboard/base.html' %} 
+{% load static %}
+{% block main-content %}
+{% load crispy_forms_tags %}
+
+{% if notes %}
+<section class="notescont">
+<div class="container-fluid">
+    <div class="row">
+        <ul class="notesulist container mt-5">
+
+            {% for note in notes %}
+
+            <li class="noteslist">
+                <div class="noteanchor mb-3">
+                    <a href="{% url 'notedetails' note.id %}">
+                        <h2 class="notestitle">{{note.title|slice:"0:10"}}</h2>
+                        <p class="notedesc">{{note.description|slice:"0:100"}}...</p>
+                    </a>
+                    <div class="text-right notesicon">
+                        <a href="{% url 'updatenote' note.id %}"><i class="fa fa-edit"></i></a>
+                        <a href="{% url 'deletenote' note.id %}"><i class="fa fa-trash"></i></a>
+                    </div>
+                </div>
+            </li>
+
+            {% endfor %}
+            
+        </ul>
+    </div>
+</div>
+</section>
+{% endif %}
+
+<br><br>
+<div class="container pb-3">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom fw-700">Create Notes</legend>
+        </fieldset>
+        {{form|crispy}}
+        <div class="form-group">
+            <button href="" class="btn btn-style1" type="submit">
+                Create
+            </button>
+        </div>
+    </form>
+</div>
+
+{% endblock main-content %}
