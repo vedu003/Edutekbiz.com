@@ -735,6 +735,11 @@ h1{
   margin-top: 1rem;
 }
 
+.card-header2 h6, .card-header2 h4, .card-header2 h5{
+  display: block;
+  overflow-wrap: break-word;
+}
+
 }
 
 

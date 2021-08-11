@@ -1,5 +1,6 @@
 {% extends 'dashboard/base.html' %} 
 {% load static %} 
+{% block title %}Youtube{% endblock title %}
 {% block main-content %}
 
 <section class='text-center container mt-5'>
@@ -22,7 +23,7 @@
 
                     </div>
                     <div class="col-md-7">
-                        <h3 class="p-0 m-0">{{result.title}}</h3>
+                        <h4 class="p-0 m-0">{{result.title}}</h4>
                         <b>
                             <u>
                                 <h5 class="p-0 m-0">{{result.channel}}</h5>

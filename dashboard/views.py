@@ -278,6 +278,19 @@ def wiki(request):
                 'form':form,
                 'option':e.options
             }
+            
+
+        except wikipedia.exceptions.PageError as e:
+            context = {
+                'form':form,
+                'option':e
+            }
+        
+        except wikipedia.exceptions.WikipediaException as e:
+            context = {
+                'form':form,
+                'option':e
+            }
 
         return render(request,'dashboard/wiki.html',context)
     else:

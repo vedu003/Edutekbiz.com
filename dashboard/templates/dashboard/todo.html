@@ -1,7 +1,8 @@
 {% extends 'dashboard/base.html' %} 
 {% load static %}
-{% block main-content %}
 {% load crispy_forms_tags%}
+{% block title %}Todo{% endblock title %}
+{% block main-content %}
 {% if todo %}
 <section class="todocont p-3">
 <div class="container mt-5">

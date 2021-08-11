@@ -1,7 +1,8 @@
 {% extends 'dashboard/base.html' %} 
 {% load static %}
-{% block main-content %}
 {% load crispy_forms_tags %}
+{% block title %}Notes{% endblock title %}
+{% block main-content %}
 
 {% if notes %}
 <section class="notescont">
@@ -14,7 +15,7 @@
             <li class="noteslist">
                 <div class="noteanchor mb-3">
                     <a href="{% url 'notedetails' note.id %}">
-                        <h2 class="notestitle">{{note.title|slice:"0:10"}}</h2>
+                        <h2 class="notestitle">{{note.title|slice:"0:10"}}...</h2>
                         <p class="notedesc">{{note.description|slice:"0:100"}}...</p>
                     </a>
                     <div class="text-right notesicon">
