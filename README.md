@@ -1,2 +1,0 @@
-# Edutekbiz.com
-edutekbiz
